@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js h-100">
+<!--<![endif]-->
+<head>
+
+    <!-- Custom Build CMS (Django and Python) Created by: Morten Noerregaard
+          http://CraftinDev.com
+          Programming by: Morten Noerregaard
+          Design by: Morten Noerregaard
+          Any Wordpress? NO!!!! -->
+
+    <meta name="robots" content="all">
+    <meta content="max-age=200" http-equiv="cache-control">
+    <!-- Enable Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="canonical" href="{{request.build_absolute_uri }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social login App {% block title %} {% endblock %}</title>
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon-precomposed" href="{% static "img/logo.png" %}" type="image/png">
+    <!-- 152x152 -->
+    <link rel="icon" href="{% static "img/logo.png" %}" type="image/png">
+    <!-- 32x32 or 64x64 -->
+    <!-- For IE -->
+    <!--[if IE]><link rel="shortcut icon" href="{% static "img/logo.png" %}"><![endif]-->
+    <!-- 16x16 -->
+    <!-- For Mobile Windows -->
+    <meta name="msapplication-TileColor" content="#D83434">
+    <meta name="msapplication-TileImage" content="{% static "img/logo.png" %}" type="image/png">
+    <!-- 32x32 or 64x64 -->
+    <link rel="icon" href="{% static "img/logo.png" %}" type="image/png">
+    {% block head %}
+    <meta name="author" content="Morten Noerregaard">
+    <meta name="description" content="Social login app with Django">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="{{ request.get_host }}">
+    <!-- Facebook OpenG -->
+    <meta property="fb:admins" content="">
+    <meta property="fb:app_id" content="">
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Social login app | Home">
+    <meta property="og:site_name" content="{{ request.get_host }}">
+    <meta property="og:url" content="{{request.build_absolute_uri }}">
+    <meta property="og:image" content="{% static "img/logo.png" %}" type="image/png">
+    <meta property="og:description" content="">
+    
+    <style>
+ body, html {
+    font-family: 'Merriweather', serif;
+}
+
+.shape {
+  position: absolute;
+  width: 150px;
+  top: .5rem;
+  left: .5rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, .7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+}
+
+.userAvatar-img {
+    border-radius: 50%;
+    color: rgb(229 239 247);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.userAvatar-white {
+    padding: 10px;
+    background: #FFF;
+    margin-bottom: 1em;
+}
+ 
+video {
+  /* override other styles to make responsive */
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+/* 22. social
+--------------------------------------------------------------------------------*/
+
+.social-01 {
+    text-align: center;
+}
+
+.social-01__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1c1c1c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.social-01__navSocial {
+    overflow: hidden;
+}
+
+.social-01__item {
+    color: #c2c2c2;
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+    transition: all ease .3s;
+}
+
+.social-01__style-02 .social-01__item {
+    width: 45px;
+    height: 45px;
+    line-height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 10px;
+    background-color: #f7f7f7;
+}
+
+.social-01__style-02 .social-01__item:hover {
+    background-color: #5DA2A8;
+    color: white;
+}
+.footer-social a {
+    color: #b9b9b9 !important;
+    text-decoration: underline;
+}
+.social-01__style-03 .social-01__title {
+    font-size: 16px;
+    color: #626262;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-01__style-03 .social-01__navSocial {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-size {
+    font-size: 1.3em;
+}
+
+
+.social-01, .social-01 {
+    /*float: left;*/
+    margin-bottom: 30px;
+}
+
+.social-01 + *,
+.social-01 + * {
+    clear: both;
+}
+
+@media (min-width: 768px) {
+    .social-01,
+    .social-01 {
+        position: absolute;
+        right: 4em;
+
+
+    }
+
+    .social-01 .social-01__item,
+    .social-01 .social-01__item {
+        display: block;
+        margin: 20px 10px;
+    }
+}  
+.footer-area {
+    padding-top: 100px;
+}        
+</style>
+    {% endblock head %}
+    
+    <!-- regular styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="{% static "css/navbar.css" %}?{% now "U" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/main.css" %}?{% now "U" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/footer.css" %}?{% now "U" %}" rel="stylesheet" type="text/css">
+
+    <!-- custom imports -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css" integrity="sha512-e+PxBumNbaIweetzh9C4Ptz8bD8NwI/H8usndKNEzmaBAKKR7sa8pp6iVqqeP04KHZSCzMaoRg0LFsAeImVHWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--- CSS files are imported into scss -->
+    <link href="{% static "scss/scss.css" %}" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+    <script async src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script async src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="mznVGQiH"></script>
+</head>
+
+<body id="top" class="d-flex flex-column h-100">
+
+<!-- Navbar -->
+{% include 'inc/_navbar.html' %}
+
+<main class="flex-shrink-0 mt-5">
+   {% block content %}
+
+    <!-- HTML CONTENT -->
+
+   {% endblock content %}
+</main>
+
+<!-- Footer -->
+{% include 'inc/_footer.html' %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<script src="{% static "js/fitvids.js" %}" type="text/javascript"></script>
+<script src="{% static "js/main.js" %}" type="text/javascript"></script>
+
+</body>
+</html>
